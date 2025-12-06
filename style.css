@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    padding: 40px;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#fileInput {
+    margin: 20px 0;
+}
+
+#convertBtn {
+    padding: 10px 20px;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#convertBtn:hover {
+    background: #0056b3;
+}
+
+#output {
+    margin-top: 20px;
+    text-align: left;
+    background: #eee;
+    padding: 15px;
+    border-radius: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+#downloadLink {
+    margin-top: 20px;
+    display: inline-block;
+    background: green;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+}
