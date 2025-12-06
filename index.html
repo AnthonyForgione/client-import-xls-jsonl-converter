@@ -17,12 +17,11 @@
 
   <div class="container">
 
-    <!-- LOGO -->
-    <div class="logo-wrapper">
+    <!-- HEADER: Title Left, Logo Right -->
+    <div class="header-flex">
+      <h1>ASAM Client Import Converter</h1>
       <img src="logo.png" alt="Company Logo" class="app-logo">
     </div>
-
-    <h1>ASAM Client Import Converter</h1>
     <p class="sub-description">
       Convert the XLS template into JSONL for ASAM client import.
     </p>
@@ -34,4 +33,29 @@
       <h3>File Color Code Description</h3>
       <ul class="color-bullets">
         <li><span class="legend orange"></span> Orange: Mandatory fields that must be completed.</li>
-        <li><span class="legend green"></span> Green: Fields to be used only
+        <li><span class="legend green"></span> Green: Fields to be used only when the entity type is “Person.”</li>
+        <li><span class="legend white"></span> White: Common non-mandatory fields or fields used only for the “Organisation” entity type.</li>
+      </ul>
+
+      <a href="ASAM_Template.xlsx" class="download-template" download>Download XLS Template</a>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="step-box">
+      <h2>Step 2: Upload Your Client Data for Import</h2>
+
+      <label for="fileInput" class="file-upload-label">Choose File</label>
+      <input type="file" id="fileInput" accept=".xls,.xlsx">
+
+      <button id="convertBtn" type="button" class="convert-btn">Convert to JSONL</button>
+
+      <a id="downloadLink" class="download-jsonl" style="display:none;">Download JSONL</a>
+
+      <pre id="output"></pre>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
