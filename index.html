@@ -3,45 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <title>ASAM Client Import Converter | XLS → JSONL</title>
-  
+
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- Link your CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- SheetJS library -->
+  <!-- SheetJS -->
   <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
 </head>
 <body>
 
   <div class="container">
-    <h2>ASAM Client Import Converter <br> XLS → JSONL</h2>
 
-    <!-- Instructions -->
-    <div class="instructions">
-      <p>
-        <span class="mandatory">Mandatory fields</span> are highlighted in orange.<br>
-        <span class="person-only">Fields only for entity type "Person"</span> are in green.<br>
-        <span class="common">White fields</span> are either common non-mandatory fields or for entity type "Organisation".
-      </p>
-    </div>
+    <h1>ASAM Client Import Converter</h1>
+    <p class="subtitle">Convert the XLS template into JSONL for ASAM import</p>
 
-    <!-- Template download -->
-    <a id="templateLink" href="Simplified_Client_Import_Template.xlsx" download>
-      Download Simplified Client Import Template
-    </a>
+    <!-- STEP 1 -->
+    <section class="step-block">
+      <h2>Step 1: Download the Simplified Client Import Template</h2>
 
-    <!-- File input and convert button -->
-    <input type="file" id="fileInput" accept=".xls,.xlsx">
-    <button id="convertBtn" type="button">Convert</button>
+      <h3 class="small-title">File Color Code Description</h3>
 
-    <!-- Output JSONL -->
-    <pre id="output"></pre>
-    <a id="downloadLink" style="display:none;">Download JSONL</a>
+      <ol class="color-list">
+        <li><span class="mandatory">Mandatory fields</span> are highlighted in orange.</li>
+        <li><span class="person-only">Fields only for entity type "Person"</span> are in green.</li>
+        <li><span class="common">White fields</span> are either common non-mandatory fields or for entity type "Organisation".</li>
+      </ol>
+
+      <a id="templateLink" href="Simplified_Client_Import_Template.xlsx" download class="button-primary">
+        ⬇️ Download Template
+      </a>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="step-block">
+      <h2>Step 2: Upload Your Completed File</h2>
+
+      <label for="fileInput" class="file-upload">
+        📄 Choose XLS/XLSX File
+      </label>
+      <input type="file" id="fileInput" accept=".xls,.xlsx">
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="step-block">
+      <h2>Step 3: Convert to JSONL</h2>
+
+      <button id="convertBtn" class="button-primary">⚙️ Convert File</button>
+
+      <pre id="output"></pre>
+      <a id="downloadLink" style="display:none;" class="button-primary">Download JSONL</a>
+    </section>
+
   </div>
 
-  <!-- Link your JS -->
   <script src="script.js"></script>
 </body>
 </html>
