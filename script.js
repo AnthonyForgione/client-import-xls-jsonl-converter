@@ -118,9 +118,14 @@
 
     // --- Identity Numbers ---
     const identityNumbers = [];
+    
+    // National Tax No. is now added for both PERSON and ORGANISATION
+    if (!isEmpty(row['nationaltaxno'])) {
+      identityNumbers.push({type:'tax_no', value:_to_string_id(row['nationaltaxno'])});
+    }
+
     if (entityTypeUpper === 'ORGANISATION') {
       if (!isEmpty(row['dunsnumber'])) identityNumbers.push({type:'duns', value:_to_string_id(row['dunsnumber'])});
-      if (!isEmpty(row['nationaltaxno'])) identityNumbers.push({type:'tax_no', value:_to_string_id(row['nationaltaxno'])});
       if (!isEmpty(row['legalentityidentifierlei'])) identityNumbers.push({type:'lei', value:_to_string_id(row['legalentityidentifierlei'])});
     } else if (entityTypeUpper === 'PERSON') {
       if (!isEmpty(row['nationalid'])) identityNumbers.push({type:'national_id', value:_to_string_id(row['nationalid'])});
@@ -128,6 +133,7 @@
       if (!isEmpty(row['socialsecuritynumber'])) identityNumbers.push({type:'ssn', value:_to_string_id(row['socialsecuritynumber'])});
       if (!isEmpty(row['passportno'])) identityNumbers.push({type:'passport_no', value:_to_string_id(row['passportno'])});
     }
+
     if (identityNumbers.length>0) clientData['identityNumbers'] = identityNumbers;
 
     // --- Aliases ---
